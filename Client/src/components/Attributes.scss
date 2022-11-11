@@ -1,0 +1,61 @@
+@import "../index.scss";
+
+.attribute{
+    margin: $mg-m 0;
+    h4{
+        text-transform: uppercase;
+        margin: 0;
+    }
+    ul{
+        display: flex;
+        margin: $mg-s 0;
+        padding: 0;
+        font-weight: bold;
+        list-style: none;
+        .attribute-item{
+            display: grid;
+            label, input{
+                display: block;
+                grid-column: 1;
+                grid-row: 1;
+            }
+            input{
+                display: inline-block;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                border: 0;
+                margin: 0;
+                appearance: none;
+                cursor: pointer;
+            }
+            input[disabled]{
+                cursor: default;
+            }
+        }
+    }
+    .attribute-item-color,.attribute-item-others{
+        display: inline-block;
+        margin-right: 5px;
+        border: 2px solid #cacaca;
+        border-radius: 2px;
+        
+    }
+    .attribute-item-color{
+        content: "";
+        width: 25px;
+        height: 25px;
+    }
+    .attribute-item-others{
+        padding: $pd-s 8px;
+    }
+  
+    .selected-color{
+        border: 2px solid;
+        box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.8);
+    }
+    .selected-others{
+        color: white;
+        background-color: black;
+    }
+}

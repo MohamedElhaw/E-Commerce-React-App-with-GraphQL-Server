@@ -1,0 +1,30 @@
+.category{
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .items-per-page{
+        label{
+            display: inline-block;
+            margin-right: 15px;
+            font-size: small;
+        }
+        input{
+            font-size: small;
+        }
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        opacity:1;
+        }
+        /* Firefox */
+        input[type=number] {
+        opacity:1
+        }
+    }
+    .product-cards-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

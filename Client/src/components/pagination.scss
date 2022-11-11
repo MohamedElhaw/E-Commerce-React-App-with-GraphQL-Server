@@ -1,0 +1,34 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+    align-items: center;
+    button{
+        display: inline-block;
+        background-color: unset;
+        border: unset;
+    }
+    .pagination-arrow{
+        display: inline-block;
+        width: 10px;
+        margin: 0 15px;
+        padding: 0.5% 2%;
+        border: 1px solid #eee;
+    }
+
+    .inactive{
+        filter: invert(88%) sepia(0%) saturate(269%) hue-rotate(78deg) brightness(115%) contrast(87%);
+        border: 1px solid black;
+    }
+
+    .pagination-arrow:hover.inactive{
+        cursor: default;
+    }
+
+    .pagination-arrow:hover{
+        cursor: pointer;
+    }
+}
+.pagination-none{
+    display: none;
+}

@@ -1,0 +1,250 @@
+@import "../index.scss";
+//Declare reusable property
+$hover-color:#65ca00;
+$nav-padding:1.5em;
+
+nav{
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3em;
+    background-color: white;
+    z-index: 5;
+    .nav-list{
+            width: 40%;
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            >li{
+                vertical-align: middle;
+            }
+        }
+    .nav-left{
+        margin-left: 16px;
+    }
+    .nav-right{
+        justify-content: flex-end;
+        >li{
+            padding: $nav-padding $nav-padding 0.2em;
+        }
+        .currency-nav:hover, .cart-wrapper:hover{
+            cursor: pointer;
+        }
+        .cart-wrapper{
+            min-width: 55px;
+        }
+    }
+    a{
+        display: block;
+        text-decoration: none;
+        padding: $nav-padding $nav-padding 0.5em;
+    }
+    a:hover{
+        cursor: pointer;
+        color:$hover-color;
+        border-bottom: 1px solid $hover-color;
+    }
+    .logo{
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        padding-top: $nav-padding;
+        padding-bottom: 0.2em;
+        a{
+            padding: 0;
+            img{
+                display: inline-block;
+                width: 41px;
+                height: 41px;
+            }
+        }
+        a:hover{
+            border: 0;
+        }
+    }
+    .mob-menu{
+        display: none;
+    }
+}
+.active{
+    color: rgb(101, 202, 0);
+}
+.wrap-nav-list{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart{
+    img{
+        width:25px;
+        height:25px;
+    }
+    span{
+        position: relative;
+        top: -17px;
+        left: -10px;
+        border-radius: 20px;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        font-size:smaller;
+        font-weight:500;
+        padding: 2px 5px;
+    }
+    //to make the gray color on the document when mini cart show up
+    .Wrap-minicart-show{
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 100vh;
+        left:0;
+        z-index: 1;
+    }
+    .minicart-show{
+        display: flex;
+        flex-direction: column;
+        width: 325px;
+        position: absolute;
+        right: 35px;
+        font-size: smaller;
+        background-color: white;
+        z-index: 1;
+        border: 1px solid #eee;
+        padding: 0;
+    }
+}
+.currency-dropdown-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: white;
+    font-size: smaller;
+    z-index: 2;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li{
+        padding: 0.75em;
+    }
+    li:hover{
+        cursor: pointer;
+        background-color: $hover-color;
+    }
+}
+.currency-nav{
+    display: flex;
+    align-items: center;
+    img{
+        width: 20px;
+        height: 20px;
+    }
+}
+.rotate{
+    img{
+        -ms-transform: rotate(180deg); /* IE 9 */
+        transform: rotate(180deg);
+    }
+}
+
+.hide{
+    display: none;
+}
+
+@media screen and (max-width:$responsive-max-width) {
+    nav{
+    background-color: rgb(232, 255, 230);
+    flex-wrap: wrap;
+    overflow: visible;
+    position: relative;
+        .logo{
+            width: 50%;
+            order: 1;
+            padding: 0;
+            justify-content: flex-start;
+            box-sizing: border-box;
+            a img{
+                margin-left: 10px;
+            }
+        }
+        .mob-menu{
+            width: 50%;
+            order: 2;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            box-sizing: border-box;
+            img{
+                border:1px solid;
+                border-radius: 2px;
+                padding: 1%;
+                margin-right: 10px;
+            };
+        }
+        .nav-list{
+            width: 100%;
+        }
+        .nav-left{
+            order: 3;
+            width: 100%;
+            margin-left: 0;
+        }
+        ul{
+            flex-direction: column;
+            li{
+                border-bottom: 1px solid #758180;
+            }
+            li:hover{
+                background-color: $hover-color;
+                color: black;
+            }
+            li a{
+                padding: 1.5em 0 1.5em 1.5em;
+            }
+            a:hover{
+                color:black;
+                border: 0;
+            }
+        }
+        .nav-right{
+            order: 4;
+            .currency{
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 0;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .currency-nav{
+                padding-left: 1.5em;
+                padding-bottom: 1.5em;
+            } 
+            .cart{
+                padding-bottom: 1.5em;
+            }
+        }
+        .none{
+            display: none;
+        }
+    }
+    .currency-dropdown-list{
+        overflow: unset;
+        position: relative;
+        background-color: #e3ffee;
+        box-shadow:unset;
+        z-index: 0;
+        font-size: unset;
+        li{
+            padding: 1.5em 0 1.5em 1.5em;
+        }
+        li:last-child{
+            border:0;
+        }
+    }
+    
+}
